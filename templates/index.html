@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Modified to improve formatting -->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <!-- Include custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+ <!-- Main login form -->
+ <div class="login">
+    <h1>Salary Prediction</h1>
+
+    <!-- Form for input and predict button -->
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="text" name="xperience" placeholder="Enter Experience" required="required" />
+        <input type="text" name="assessment_score" placeholder="Enter Assessment Score" required="required" />
+        <input type="text" name="interview_score" placeholder="Enter Interview Score" required="required" />
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Prediction text area -->
+    <div class="prediction-text">
+       {{ prediction_text }}
+    </div>
+ </div>
+
+</body>
+</html>
